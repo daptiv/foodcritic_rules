@@ -160,3 +160,9 @@ rule 'DAPTIV001', 'Missing .tailor file. All cookbooks should comply with style 
     end
   end
 end
+
+rule 'DAPTIV002', 'Prefer include_attribute syntax to require_relative.' do
+  recipe do |ast|
+    ast.xpath('//command[ident/@value="require_relative"]')
+  end
+end
