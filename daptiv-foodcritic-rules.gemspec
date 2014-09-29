@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.files         = ["lib/foodcritic/rules/rules.rb"]
   gem.name          = "daptiv-foodcritic-rules"
   gem.require_paths = ["lib"]
-  gem.version       = '0.0.1'
+  gem.version       = '0.0.2'
 
   gem.add_runtime_dependency "foodcritic", ">= 2.2.0"
 
