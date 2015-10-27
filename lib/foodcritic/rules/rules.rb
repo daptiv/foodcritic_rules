@@ -151,17 +151,7 @@ end
 #######################################################################################################################
 # Daptiv Rules
 
-rule 'DAPTIV001', 'Missing .tailor file. All cookbooks should comply with style recommendations.' do
-  tags %w{style tailor}
-  cookbook do |path|
-    filepath = File.join(path, '.tailor')
-    unless File.exists?(filepath)
-      [ file_match(filepath) ]
-    end
-  end
-end
-
-rule 'DAPTIV002', 'Prefer include_attribute syntax to require_relative.' do
+rule 'DAPTIV001', 'Prefer include_attribute syntax to require_relative.' do
   recipe do |ast, path|
     if path.include?('recipes') || path.include?('attributes')
       ast.xpath('//command[ident/@value="require_relative"]')
